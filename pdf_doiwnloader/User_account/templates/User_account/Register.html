@@ -5,8 +5,19 @@
 {% block content %}
     <h1>Sign Up</h1>
     <form method="post">
-        {%  csrf_token %}
-        {{ form.as_p }}
+        {% csrf_token %}
+        {% for fields in form %}
+        <p>
+            {{ fields.label_tag }}
+            {{ fields }}
+            {% if fields.help_text %}
+                <small style="color: grey;">{{ fields.help_text }}</small>
+            {% endif %}
+            {% for errors in field.erros %}
+                <small style="color: red;">{{ errors }}</small>
+            {% endfor %}
+        </p>
+        {% endfor %}
         <p><input type="submit" value="Create Account"></p>
     </form>
 {% endblock %}
