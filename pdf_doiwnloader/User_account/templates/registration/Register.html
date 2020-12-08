@@ -1,0 +1,24 @@
+{% extends 'registration/base.html' %}
+
+{% block title %}Signup{% endblock %}
+
+{% block content %}
+<div class="signup">
+    <h1 class="log-txt">Sign Up</h1>
+    <form method="post">
+        {% csrf_token %}
+        {% for fields in form %}
+        <p>
+            {{ fields.label_tag }}
+            {{ fields }}
+            {% for errors in field.erros %}
+                <small style="color: red;">{{ errors }}</small>
+            {% endfor %}
+        </p>
+        {% endfor %}
+        <br>
+        <p><input class="login-btn" type="submit" value="Create Account"></p>
+        <p id="hint"><small>Already have an account?|<a id="login-redirect" href="{% url 'login' %}">Log in</a></small></p>
+    </form>
+</div>
+{% endblock %}

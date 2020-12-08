@@ -1,0 +1,315 @@
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body .gen-page{
+    font-family: 'Poppins',sans-serif;
+    font-size: 24px;
+    margin: 0px 0px 0px 0px;
+    width: 100%;
+    min-height: 500px;
+    background-color: #ffffff;
+    border: none;
+    outline: none;
+    background-image: url("/static/images/library.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.marg{
+    width: 100%;
+}
+/* Home page image
+--------------------------------------*/
+#background{
+    display: grid;
+    gap: 30px;
+}
+div .img-size{
+    width: 100%;
+}
+/*end Home page image
+--------------------------------------*/
+
+#bck-img{
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    background-size: cover;
+}
+/* Book list view */
+#list{
+    text-align: center;
+    border-bottom: 5px solid rgba(0, 0, 0, 0.563);
+    width: 40%;
+}
+#img-grid{
+    
+    padding: 5px;
+    margin: 10px 10px 0 10px;
+    width: 180px;
+}
+/* end of Book list view */
+
+/* Download Button */
+#dwnd-btn{
+    border: 2.3px solid green;
+    text-decoration: none;
+    width: 70%;
+    border-radius: 20px;
+    padding: 5px;
+    text-align: center;
+    color: white;
+    margin: 10px 20px 20px 20px;
+    width: 70%;
+
+}
+#dwnd-btn:hover{
+    background-color: rgb(208, 25, 56);
+}
+/* end download Button */
+
+/* Book_list */
+.book-list{
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10px;
+    border: none;
+    outline: none;
+    margin: 10px;
+    text-align: center;
+
+}
+#book-display{
+    display: flex;
+    flex-grow: 1;
+}
+
+#alignment{
+    border: none;
+    border-radius: 10px;
+    margin: 20px;
+    width: 40%;
+    height: 1100px;
+    color: white;
+    background: none;
+}
+#img-alignment{
+
+    border-top: 50px solid #ffffff;
+    border-bottom: 50px solid #ffffff;
+    border-left: 20px solid #ffffff;
+    border-right: 20px solid #ffffff;
+    height: 690px;
+    float: left!important;
+    margin: 20px;
+    border-radius: 15px;
+}
+#details{
+    font-size: 18px;
+    color: black;
+    letter-spacing: .15rem;
+    line-height: 150%;
+}
+#author{ 
+    text-decoration: none;
+    font-size: 14px;
+}
+#contain{
+    position: relative;
+}
+.list-books{
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    border: none;
+    background: none;
+    outline: none;
+    padding: 5px;
+    width: 50%;
+    height: 500px;
+    margin: 10px;
+}
+#img-display{
+    display: inline-flex;
+    flex-flow: row-wrap;
+    padding: 10px;
+    flex-grow: 1;
+}
+/* end of book_list */
+/* Footer */
+.footer{
+    padding: 10px;
+    color: black;
+    border: none;
+    outline: none;
+    background-color: grey;
+    text-align: center;
+    height: 200px;
+    width: 100%;
+    line-height: 2rem;
+    letter-spacing: 0.15rem;
+}
+.footer-txt{
+    font-size: 15px;
+}
+.footer-lnk{
+    text-decoration: none;
+    color: black;
+}
+#policy{
+    word-spacing: 2rem;
+}
+/* End Footer */
+
+/* Login form */
+.login{
+    border: 1px inset black;
+    border-radius: 10px;
+    background-color: black;
+    color: grey;
+    box-shadow: 50px 10px 5px 1px grey;
+    width: 50%;
+    height: 550px;
+    padding: 20px;
+    margin: 20px auto 10px auto;
+    line-height: 4rem;
+}
+.log-txt{
+    border-bottom: 6px solid rgb(23, 226, 23);
+    margin-bottom: 50px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.login-field{
+     border: 1px solid rgb(23, 226, 23);
+     border-radius: 20px;
+     width: 80%;
+     height: 40px;
+     background-color: black;
+     text-align: center;
+     color: grey;
+}
+.edt{
+    width: 20%;
+}
+.edt:hover{
+    color: rgb(23, 226, 23);
+}
+i{
+    width: 26px;
+    float: left;
+    text-align: center;
+}
+#prt-box{
+    font-size: 15px;
+    border-bottom: 2.3px solid rgb(23, 226, 23);
+    line-height: 1.5rem;
+    margin: 10px 0 10px 0;
+    
+}
+
+.login-btn{
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    color: grey;
+    background: none;
+    text-align: center;
+    border:2.3px solid rgb(23, 226, 23);
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px auto 5px auto;
+    cursor: pointer;
+    line-height: 1.5rem;
+}
+.login-btn:hover{
+    color:   rgb(23, 226, 23);
+}
+.login-foot{
+    text-decoration: none;
+    color: white;
+    letter-spacing: 0.18rem;
+}
+.login-foot:hover{
+    color:  rgb(23, 226, 23);
+}
+.shift{
+    letter-spacing: 0.15rem;
+    font-size: 14px;
+    margin: 0 auto 0 auto;
+    text-align: center;
+    line-height: 2rem;
+    letter-spacing: 0.18rem;
+}
+/* end login-form */
+
+/* Sign up form */
+.signup{
+    border: 1px inset #000000;
+    padding: 15px;
+    margin: 70px auto 20px auto;
+    width: 50%;
+    height: 900px;
+    color: grey;
+    background-color: black;
+    line-height: 2.5rem;
+    letter-spacing: 0.3rem;
+    border-radius: 10px;
+    box-shadow: inset -5px 5px -5px 5px;
+
+}
+#login-redirect{
+    text-decoration: none;
+    color: grey;
+}
+#login-redirect:hover{
+    color: rgb(23, 226, 23);
+}
+#hint{
+    font-size: 14px;
+    text-align: center;
+    line-height: 2.5rem;
+}
+/* end signup form */
+
+/* Add book form */
+#add-book{
+    border: 1px inset #4b3d3d;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 10px auto 0 auto;
+    line-height:80 2.5rem;
+    letter-spacing: 0.1rem;
+    border-radius: 15px;
+    background-color: #000000;
+    color: grey;   
+    width: 50%;
+}
+#txt-align{
+    text-align: center;
+}
+
+/* end Add book form */
+.search-field{
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 15px;
+    color: gray;
+    height: 50px;
+    width: 15%;
+    text-align: center;
+}
+
+/* Home page text edit*/
+.home-txt{
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+}
+/*End of home page text edit*/

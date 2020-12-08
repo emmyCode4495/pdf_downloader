@@ -1,0 +1,49 @@
+{% extends "registration/base.html" %}
+{% load static %}
+{% block title %}Books{% endblock %}
+
+{% block content %}
+    <div class="gen-page book-list">
+        <div id="book-display">    
+            <div id="img-alignment">
+                <p>
+                    <img src="{{ all_books.imageURL }}" alt="{{ all_books.book_name}}">
+                </p>
+            </div>
+            <div id="alignment">
+            <p>
+                {{ all_books.book_name }}<br >
+                <a id ="author" href="">{{ all_books.book_author }}</a><br>
+                <small>{{ all_books.book_summary|linebreaks }}</small>
+            </p>
+            <div id="details">
+                <p>
+                    Category: {{ all_books.category }}
+                </p>
+                <p>
+                    Published year: {{ all_books.published_year }}
+                </p>
+                <p>
+                    Edition: {{ all_books.book_edition }}
+                </p>
+                <p>
+                    Publisher: {{ all_books.publisher }}
+                </p>                               
+                <p>
+                    Language: {{ all_books.book_language }}
+                </p>
+                <p>
+                    Pages: {{ all_books.book_pages }} 
+                </p>
+                <p>
+                    ISBN No.: {{ all_books.book_isbn }}
+                </p>
+                <p>
+                    File: {{ all_books.file_type }}, {{ all_books.file_size }} mb
+                </p>
+            </div>                                         
+            <a id="dwnd-btn" href="{{all_books.file_upload.url}}" download="{{all_books.file_upload.url}}">Download</a>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

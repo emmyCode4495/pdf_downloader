@@ -1,0 +1,21 @@
+{% extends "registration/base.html" %}
+
+{% block title %}Add Book{% endblock %}
+
+{% block content %}
+<div class="gen-page edt-page">
+<div id="add-book">
+    <form method="post">
+        <h1 class="log-txt">Add Books</h1>
+        {% csrf_token %}
+        {% for book in add_books %}
+            <p id="txt-align">
+                {{ book.label_tag }}
+                {{ book }}
+            </p>
+        {% endfor %}
+        <input class="login-btn" type="submit" value="Submit">
+    </form>
+</div>
+</div>
+{% endblock %}

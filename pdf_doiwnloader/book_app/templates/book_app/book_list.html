@@ -1,0 +1,46 @@
+{% extends 'registration/base.html' %}
+{% load static %}
+{% block title %}All Books{% endblock %}
+
+
+{% block content %}
+<div id="contain">
+    <form method="get">
+        {% for fields in form %}
+            {{ fields}}
+        {% endfor %}
+    <input class="login-field edt" type="submit" value="Search">
+    </form>
+    {% if query %}
+    <h1>Search results for "{{ query }}"</h1>
+    <h3>
+    {% with results.count as total_results %}
+    Found {{ total_results }} result {{ total_results|pluralize }}
+    {% endwith %}
+    </h3>
+    {% for books in results %}
+    <h4><a href="{{ books.get_absolute_url }}">{{ books.book_name }}</a></h4>
+    {{ books.book_summary|truncatewords_html:5 }}
+    {% empty %}
+    <p>There are no search results for "{{ query }}"</p>
+    {% endfor %}
+    <p><a href="{% url 'book_app:book_search' %}">Search again</a></p>
+    {% else %}
+    
+{% endif %}
+<!--
+    <img src="{% static 'images\search.png' %}" alt="explore books">
+    -->
+    <div class="list-books">
+        <h3 id="list">Popular Books</h3>
+            <div id="img-display">
+                {% for all_book in book_list %}
+                    <p>
+                        <a href="{{ all_book.get_absolute_url }}"><img id="img-grid" src="{{all_book.imageURL}}"></a>
+                    </p>
+                {%  endfor %}
+            </div>
+        {% include "book_app\pagination.html" with page=book_list %}
+    </div>
+</div>
+{% endblock %}

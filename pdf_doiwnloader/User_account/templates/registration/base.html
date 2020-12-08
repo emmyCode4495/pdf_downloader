@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+     <link rel="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+  <div class="gen-page">
+    <nav class="marg navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"><img style="width: 200px;" src="{% static 'images/marvina.png' %}"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            {% if user.is_authenticated %}
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'home_page' %}">Home <span class="sr-only">(current)</span></a>
+            </li> 
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'book_app:book_lists' %}">Books</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'book_app:add_book' %}">Add Book</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about_page' %}">About</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">
+              Logout
+            </a>
+          </li>
+            <li class="nav-item"> 
+              <a class="nav-link" href="#">
+                <span style="font-size:18px; color:black;">Welcome, {{ request.user|upper}}</span>
+              </a>
+              <!--
+              <a class="nav-link dropdown-toggle" href="{% url 'password_change' %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Change Password
+              </a>
+              -->
+            </li>
+            
+          </ul>
+          
+            {% else %}
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'home_page' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'book_app:book_lists' %}">Books</a>
+          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about_page' %}">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'signup' %}">Signup</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+            
+            {% endif %}
+            
+        </div>
+      </nav>
+  <div class="container">
+    {% block content %}
+    {% endblock %}
+  </div>
+</div>
+  <footer class="footer">
+    <p class="footer-txt">created by #emmyCode</p>
+    <p class="footer-txt"><a href="#" class="footer-lnk" id="policy">Feedback Privacy-policy</p></a>
+    <p class="footer-txt"><a href="#" class="footer-lnk">Terms and condition</a></p>
+  </footer>
+</body>
+</html>

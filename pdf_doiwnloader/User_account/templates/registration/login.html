@@ -1,0 +1,21 @@
+{% extends "registration\base.html"%}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="login">
+    <h1 class="log-txt">Log in</h1>
+    <form method="post">
+        {% csrf_token %}
+        {% for fields in login_form %}
+        <p>
+            {{ fields.label_tag }}
+            {{ fields }}
+        </p>
+        {% endfor %}
+        <input class="login-btn" type="submit" value="Login">
+    </form>
+        <p class="shift"><a class="login-foot" href="{% url 'password_reset' %}">Forgot Password?</a></p>
+        <p class="shift">Not yet registered?<a class="login-foot" href="{% url 'signup' %}">  Signup</a></p>
+</div>
+{% endblock %}

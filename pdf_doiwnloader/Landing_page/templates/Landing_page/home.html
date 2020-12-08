@@ -1,0 +1,16 @@
+{% extends "registration/base.html" %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+  <div class="home-txt">
+    <p>
+    Lots of Ebooks! 100% free
+    Welcome to the less-student-hassles faculty based library.
+    
+  </p>
+  </div>
+  <div class="cat-book">
+    <img src="{{ cat_book.categoryURL }}" alt="{{cat_book.name}}">
+  </div>
+{% endblock %}
